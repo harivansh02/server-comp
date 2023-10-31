@@ -7,7 +7,7 @@ import {
 } from "@/app/utils/widgetHelper";
 // import { Mixpanel } from "@app/utils/mixpanel";
 
-const WidgetCTA = ({ btnColor }) => {
+const WidgetCTA = ({ btnColor,domain }) => {
   const handleClick = () => {
     try {
       if (typeof window !== "undefined") {
@@ -19,7 +19,7 @@ const WidgetCTA = ({ btnColor }) => {
         const payload = {
           event: "click",
           label: "clicked_on_generic_widget",
-          domain: hashObject.domain,
+          domain: domain,
           env: true,
           properties: {
             sessionId: checkIfSessionIdExists(),
@@ -27,6 +27,7 @@ const WidgetCTA = ({ btnColor }) => {
             uniqueVisitorId: checkIfUniqueVisitorIdExists(),
           },
         };
+        console.log(payload, "payload");
         sendDataToAnalytics(payload);
       }
     } catch (error) {
