@@ -4,7 +4,7 @@ import {
   checkIfSessionIdExists,
   checkIfUniqueVisitorIdExists,
   initAnalytics,
-} from "@/utils/widgetHelper";
+} from "@/app/utils/widgetHelper";
 import { sendDataToAnalytics } from "@/app/utils/services";
 
 const WidgetAnalytics = ({ isWidgetEnabled, domain }) => {

@@ -57,10 +57,12 @@ const WidgetCarousel = ({ posts }) => {
         },
 
     };
+
+    
     return (
         <div className="gwSliderContainer">
             <Slider {...settings}>
-                {posts.map((post, index) =>
+                {posts?.map((post, index) =>
                     <SocialProofTile
                         key={
                             post.id
