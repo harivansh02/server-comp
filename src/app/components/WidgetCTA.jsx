@@ -7,7 +7,8 @@ import {
 } from "@/app/utils/widgetHelper";
 // import { Mixpanel } from "@app/utils/mixpanel";
 
-const WidgetCTA = ({ btnColor,domain }) => {
+const WidgetCTA = ({ btnColor, domain }) => {
+  console.log("...");
   const handleClick = () => {
     try {
       if (typeof window !== "undefined") {
