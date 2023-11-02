@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect } from "react";
 import { HEADING, SUBHEADING, BTN_COLOR } from "@/app/utils/constant";
 
@@ -7,35 +7,32 @@ const WidgetHeader = ({
   subHeading = SUBHEADING,
   btnColor = BTN_COLOR,
   brandName = "Youshd",
+  domainFromHeader,
 }) => {
-
-
-
-  
+  console.log(domainFromHeader, "domainFromHeader in WidgetHeader component");
   function replaceBrandNameWithBold(text, brandName) {
     // Create a regular expression with the brand name as a variable
 
     // exact match with brand name and no other word
-    const regex = new RegExp(`\\b${brandName}\\b`, 'gi'); // 'gi' for global and case-insensitive match
+    const regex = new RegExp(`\\b${brandName}\\b`, "gi"); // 'gi' for global and case-insensitive match
 
     // Replace all instances of the brand name with an empty string
     const newText = text.replaceAll(regex, `<b>${brandName}</b>`);
 
     // if no brand name is found then return the original text + brand name
-    if (newText === text) return text + ' ' + `<b>${brandName}</b>`;
+    if (newText === text) return text + " " + `<b>${brandName}</b>`;
 
     return newText;
   }
 
   subHeading = replaceBrandNameWithBold(subHeading, brandName);
 
-  
   useEffect(() => {
-    document.documentElement.style.setProperty("--background-chat", `${btnColor}`)
-
+    document.documentElement.style.setProperty(
+      "--background-chat",
+      `${btnColor}`
+    );
   }, [btnColor]);
-
-
 
   return (
     <div className="youshd-widget-header">
